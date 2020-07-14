@@ -1,5 +1,19 @@
 import React, { useState, useEffect } from 'react';
 
+// todo: create Prop type for this component
+export function BasicProps({ name, age }) {
+  return (
+    <div>
+      <div>Name: {name}</div>
+      <div>Age: {age}</div>
+    </div>
+  )
+}
+
+
+
+
+
 export function Example1() {
   // primitive types are fine
   const [bool, setBool] = useState(false)
@@ -12,9 +26,15 @@ export function Example1() {
       <p>Ex 1 : Primitives</p>
       <button onClick={() => setBool(true)}>Toggle</button>
       <button onClick={() => setCount(c => c + 1)}>Increment</button>
+      <button onClick={() => setBoolOrNum(c => c + 1)}>Increment</button>
     </div>
   )
 }
+
+
+
+
+// todo : set data type to Item
 
 // interface Item {
 //   id: string
@@ -38,6 +58,10 @@ export function Example2() {
 }
 
 
+
+
+// todo : fix data type
+
 interface User {
   id: number
   name: string
@@ -51,7 +75,7 @@ function api(): Promise<User> {
 
 export function Example3() {
   // use union type with null for initial state
-  const [data, setData] = useState<User | null>(null)
+  const [data, setData] = useState(null)
   useEffect(() => {
     // tip: JavaScript Immediately-invoked Function Expressions (IIFE)
     (async function() {

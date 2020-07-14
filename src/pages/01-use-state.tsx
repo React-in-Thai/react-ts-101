@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-// todo: create Prop type for this component
+// todo: create Prop type for this component, also optional type
 export function BasicProps({ name, age }) {
   return (
     <div>
